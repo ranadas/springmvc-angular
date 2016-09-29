@@ -1,4 +1,4 @@
-package com.javacodegeeks.examples.config;
+package com.rdas.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.javacodegeeks.examples")
+@ComponentScan("com.rdas")
 public class WebConfig extends WebMvcConfigurerAdapter{
 
     @Override

@@ -1,4 +1,4 @@
-package com.javacodegeeks.examples;
+package com.rdas;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -10,7 +10,7 @@ import javax.servlet.ServletRegistration;
 
 public class WebAppInitializer implements WebApplicationInitializer {
 
-    private static final String CONFIG_LOCATION = "com.javacodegeeks.examples.config";
+    private static final String CONFIG_LOCATION = "com.rdas.config";
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
