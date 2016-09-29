@@ -12,23 +12,23 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.2.4.RELEASE</version>
+            <version>${spring_version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.2.4.RELEASE</version>
+            <version>${spring_version}</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>angularjs</artifactId>
-            <version>1.4.8</version>
+            <version>${angular_version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>3.3.6</version>
+            <version>${bootstrap_version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -68,5 +68,9 @@
             </plugin>
         </plugins>
     </build>
-
+    <properties>
+        <spring_version>4.3.3.RELEASE</spring_version>
+        <angular_version>1.5.8</angular_version>
+        <bootstrap_version>3.3.7-1</bootstrap_version>
+    </properties>
 </project>
