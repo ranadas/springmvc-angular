@@ -5,3 +5,8 @@ app.controller('galleryController', function($scope) {
 app.controller('contactusController', function($scope) {
     $scope.headingTitle = "Contact Info";
 });
+
+
+app.controller('formController', function($scope) {
+    $scope.headingTitle = "Form Submit";
+});
