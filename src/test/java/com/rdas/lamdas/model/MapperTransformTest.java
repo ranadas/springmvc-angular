@@ -30,7 +30,7 @@ public class MapperTransformTest {
 
     @Test
     public void transformSingleObject() {
-        EmployerUI employerUI = externalToMyLocation.apply(employer1);
+        EmployerUI employerUI = employerToEmloyerUI.apply(employer1);
         assertEquals(employerUI.getFullName(), employer1.getFullName());
     }
 
@@ -43,21 +43,19 @@ public class MapperTransformTest {
         gLocations.add(employer4);
 
         List<EmployerUI> myLocations = gLocations.stream()
-                .map(externalToMyLocation)
+                .map(employerToEmloyerUI)
                 .collect(Collectors.<EmployerUI> toList());
 
         System.out.printf(myLocations.toString());
 
     }
 
-    private Function<Employer, EmployerUI> externalToMyLocation = new Function<Employer, EmployerUI>() {
-        public EmployerUI apply(Employer t) {
-            EmployerUI.EmployerUIBuilder employerUIBuilder = EmployerUI.builder().fullName(t.getFullName()).status(t.getStatus());
-            if (isAdmin("XX14") && (t.getStatus().equalsIgnoreCase("REJECT") || t.getStatus().equalsIgnoreCase("SUBMIT"))) {
-                employerUIBuilder.showButton(true);
-            }
-            return employerUIBuilder.build();
+    private Function<Employer, EmployerUI> employerToEmloyerUI = employer -> {
+        EmployerUI.EmployerUIBuilder employerUIBuilder = EmployerUI.builder().fullName(employer.getFullName()).status(employer.getStatus());
+        if (isAdmin("XX14") && (employer.getStatus().equalsIgnoreCase("REJECT") || employer.getStatus().equalsIgnoreCase("SUBMIT"))) {
+            employerUIBuilder.showButton(true);
         }
+        return employerUIBuilder.build();
     };
 
     private boolean isAdmin(String name) {
