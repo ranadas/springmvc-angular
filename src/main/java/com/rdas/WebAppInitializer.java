@@ -1,5 +1,7 @@
 package com.rdas;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -11,7 +13,6 @@ import javax.servlet.ServletRegistration;
 public class WebAppInitializer implements WebApplicationInitializer {
 
     private static final String CONFIG_LOCATION = "com.rdas.config";
-
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
 
@@ -28,5 +29,9 @@ public class WebAppInitializer implements WebApplicationInitializer {
         servlet.addMapping("/");
         servlet.setAsyncSupported(true);
         servlet.setLoadOnStartup(1);
+
+//        env.setActiveProfiles("someProfile");
+        servletContext.setInitParameter("spring.profiles.default", "qa");
+//        servletContext.setInitParameter("spring.profiles.active", "dev");
     }
 }
