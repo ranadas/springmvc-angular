@@ -18,13 +18,17 @@
             <li><a class="btn" href="#/home">Home</a></li>
         </ul>
     </div>
+    <!-- SHOW ERROR/SUCCESS MESSAGES -->
+    <div id="messages">{{message}}</div>
+
     <div ng-view></div>
 </div>
 
+<script src="../resources/static/angular/angular.min.js"></script>
+<script src="../resources/static/angular/angular-resource.min.js"></script>
+<script src="../resources/static/angular/angular-route.min.js"></script>
+<script src="../resources/static/angular/angular-messages.min.js"></script>
 
-<script src="./webjars/angularjs/1.5.8/angular.js"></script>
-<script src="./webjars/angularjs/1.5.8/angular-resource.js"></script>
-<script src="./webjars/angularjs/1.5.8/angular-route.js"></script>
 <script src="../resources/static/js/app.js"></script>
 <script src="../resources/static/js/controller.js"></script>
 <link rel="stylesheet" href="./webjars/bootstrap/3.3.7-1/css/bootstrap.css">
