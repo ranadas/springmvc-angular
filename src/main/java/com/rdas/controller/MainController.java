@@ -24,11 +24,10 @@ public class MainController {
         return new ResponseEntity("success", HttpStatus.OK);
     }
 
-
+    // The following request mapping is to demonstrate error handling using controller advice
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/{type:.+}", method = RequestMethod.GET)
-    public ModelAndView getPages(@PathVariable("type") String type)
-            throws Exception {
-
+    public ModelAndView getPages(@PathVariable("type") String type) throws Exception {
         if ("error".equals(type)) {
             // go handleCustomException
             throw new CustomGenericException("E888", "This is custom message");

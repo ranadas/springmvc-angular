@@ -24,4 +24,11 @@ public class GlobalExceptionAdvice {
         model.addObject("errMsg", "this is Exception.class");
         return model;
     }
+    /*
+    have a global init binder
+    @InitBinder
+    public void initBinder(WebDataBinder webDataBinder) {
+        webDataBinder.setBindEmptyMultipartFiles(false);
+    }
+     */
 }
